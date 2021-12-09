@@ -1,0 +1,31 @@
+{
+  "name": "kamrad-shortcodes",
+  "version": "1.0.0",
+  "description": "A set of Hugo shortcodes for Kamrad related features",
+  "main": "assets/js/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3scale-labs/kamrad-shortcodes.git"
+  },
+  "keywords": [
+    "kamrad",
+    "hugo",
+    "developer",
+    "portal",
+    "typescript",
+    "docu",
+    "hugo",
+    "themes",
+    "hugo",
+    "shortcodes"
+  ],
+  "author": "@didierofrivia",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/3scale-labs/kamrad-shortcodes/issues"
+  },
+  "homepage": "https://github.com/3scale-labs/kamrad-shortcodes#readme"
+}
