@@ -1,0 +1,26 @@
+{{/*
+GetSpecPages
+Retrieves the list of term pages for the `specs_refs` taxonomy.
+
+@author @didierofrivia
+
+@context Any (.)
+
+@access private
+
+@returns Collection of Pages
+
+@example - Go Template
+We don't need a context
+We don't need a variant either as returned value is the same across build
+
+{{ with partialCached "GetSpecPages" "GetSpecPages" }}
+The spec name is {{ .name }}
+{{ end }}
+*/}}
+{{ $specs := slice }}
+{{ range site.Taxonomies.specs_refs }}
+{{ $specs = $specs | append .Page }}
+{{ end }}
+
+{{ return $specs }}

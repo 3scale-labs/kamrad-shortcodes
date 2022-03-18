@@ -1,0 +1,30 @@
+{{/*
+GetSpecData
+Retrieves the data of a spec given a key
+
+@author @didierofrivia
+
+@context String
+
+@access private
+
+@returns Map
+String (.name)
+String (.id)
+String (.description)
+String (.type)
+String (.state)
+String (.createdOn)
+
+@example - Go Template
+Variant is the lone parameter
+{{ with partialCached "GetSpecData" "the-spec-id" "the-spec-id" }}
+This is the spec description {{ .description }}
+{{ end }}
+*/}}
+{{ $spec := dict }}
+{{ with index site.Data.specs.index . }}
+    {{ $spec = . }}
+{{ end }}
+
+{{ return $spec }}

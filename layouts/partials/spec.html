@@ -1,0 +1,4 @@
+{{ $page := . }}
+{{ with partialCached "func/GetSpecData" .Data.Term .Data.Term }}
+<li><a href="{{ $page.RelPermalink }}">{{ .name }}</a></li>
+{{ end }}
