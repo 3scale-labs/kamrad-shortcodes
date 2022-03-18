@@ -1,0 +1,9 @@
+# Taxonomies and Permalinks needed in the site config
+
+# Taxonomies
+[taxonomies]
+  spec_ref = "specs_refs"
+
+# Permalinks
+[permalinks]
+  specs_refs = "/spec/:title"
