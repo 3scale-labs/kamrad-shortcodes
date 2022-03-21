@@ -1,0 +1,7 @@
+{{ define "main" }}
+<ul>
+    {{ range partialCached "func/GetSpecPages" "GetSpecPages" }}
+        {{ partialCached "spec" . . }}
+    {{ end }}
+</ul>
+{{ end }}
