@@ -4,6 +4,7 @@
   "description": "A set of Hugo shortcodes for Kamrad related features",
   "main": "assets/js/index.ts",
   "scripts": {
+    "lint": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
