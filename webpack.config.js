@@ -9,17 +9,17 @@ const join = (...paths) => path.join(__dirname, ...paths)
 
 module.exports = (env, { mode }) => ({
     entry: {
-        main: [
+        'assets/main': [
             join("assets", "js", "login.ts"),
             join("assets", "js", "logoutButton.ts"),
         ],
-        apiDocs: join("assets", "js", "apiDocs.ts"),
-        apiDocsStyles: join("assets", "scss", "api-docs", "main.scss"),
-        authServiceWorker: join("assets", "js", "auth", "authServiceWorker.ts"),
+        'assets/apiDocs': join("assets", "js", "apiDocs.ts"),
+        'assets/apiDocsStyles': join("assets", "scss", "api-docs", "main.scss"),
+        'authServiceWorker': join("assets", "js", "auth", "authServiceWorker.ts")
     },
     output: {
         filename: "[name].js",
-        path: join("static/assets"),
+        path: join("static"),
         publicPath: "",
     },
     performance: {
@@ -96,6 +96,7 @@ module.exports = (env, { mode }) => ({
     plugins: [
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: [
+                'static/*.js',
                 'static/**/*.js',
                 'static/**/*.css'
             ],
