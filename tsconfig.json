@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "assets/js/",
     "target": "es5",
     "noImplicitAny": true,
     "module": "es6",
@@ -16,11 +16,10 @@
     "pretty": true
   },
   "include": [
-    "./assets/**/*"
+    "./assets/js/*"
   ],
   "exclude": [
     "./node_modules",
-    "./public",
-    "./themes"
+    "./static"
   ]
 }
