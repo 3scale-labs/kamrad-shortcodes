@@ -3,17 +3,11 @@
 */}}
 
 {{ define "main" }}
-{{ $styleOpts := (dict "includePaths" (slice "node_modules")) }}
-{{ $apiDocsCss := resources.Get "scss/api-docs/main.scss" | resources.ToCSS $styleOpts | resources.Minify }}
-<link type="text/css" rel="stylesheet" href="{{ $apiDocsCss.Permalink }}">
 
 {{ with partialCached "func/GetSpecData" .Data.Term .Data.Term }}
     {{ $spec := index site.Data.specs .id | jsonify }}
     <div class="api-docs" id="api-docs" data-spec="{{$spec}}"></div>
 {{ end }}
 
-{{ $env := cond .Site.IsServer "\"development\"" "\"production\"" }}
-{{ $opts := dict "defines" (dict "process.env.NODE_ENV" $env) }}
-{{ $apiDocs := resources.Get "js/apiDocs.ts" | babel | js.Build $opts }}
-<script src="{{ $apiDocs.RelPermalink }}"></script>
+<script src='{{ "assets/apiDocs.js" | absURL }}'></script>
 {{ end }}
