@@ -88,8 +88,8 @@ module.exports = (env, { mode }) => ({
         symlinks: false,
         cacheWithContext: false,
         fallback: {
-            "buffer": false,
-            "stream": false
+            buffer: require.resolve("buffer/"),
+            stream: require.resolve("stream-browserify")
         }
     },
     plugins: [
