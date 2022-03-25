@@ -14,7 +14,6 @@ module.exports = (env, { mode }) => ({
             join("assets", "js", "logoutButton.ts"),
         ],
         'assets/apiDocs': join("assets", "js", "apiDocs.ts"),
-        'assets/apiDocsStyles': join("assets", "scss", "api-docs", "main.scss"),
         'authServiceWorker': join("assets", "js", "auth", "authServiceWorker.ts")
     },
     output: {
@@ -59,7 +58,7 @@ module.exports = (env, { mode }) => ({
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    "style-loader",
                     "css-loader",
                     "sass-loader",
                 ]
@@ -99,9 +98,6 @@ module.exports = (env, { mode }) => ({
                 'static/*.js',
                 'static/**/*.js',
                 'static/**/*.css'
-            ],
-            cleanAfterEveryBuildPatterns: [
-                join("static/assets/apiDocsStyles.js")
             ],
             verbose: true,
         }),

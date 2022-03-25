@@ -4,8 +4,6 @@
 
 {{ define "main" }}
 
-<link type="text/css" rel="stylesheet" href='{{ "assets/apiDocsStyles.css" | absURL }}'>
-
 {{ with partialCached "func/GetSpecData" .Data.Term .Data.Term }}
     {{ $spec := index site.Data.specs .id | jsonify }}
     <div class="api-docs" id="api-docs" data-spec="{{$spec}}"></div>
